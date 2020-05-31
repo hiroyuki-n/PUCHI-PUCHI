@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box; }
+
+body {
+  font-family: "M PLUS Rounded 1c";
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa; }
+
+.wrap {
+  font-size: 0.5vw; }
+  @media only screen and (max-width: 768px) {
+    .wrap {
+      font-size: 1.5vw; } }
+  .wrap h1 {
+    text-align: center; }
+    .wrap h1 img {
+      width: 24em; }
+  .wrap ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50em;
+    margin: auto;
+    position: relative;
+    padding: 4em 0; }
+    .wrap ul:before {
+      content: "";
+      display: block;
+      width: 50em;
+      height: 50em;
+      position: absolute;
+      transform: scale(1.1);
+      background-image: url(../img/line.svg);
+      background-size: 100%; }
+    .wrap ul li {
+      width: 10em;
+      height: 10em;
+      list-style: none;
+      position: relative; }
+      .wrap ul li.none {
+        pointer-events: none; }
+      .wrap ul li span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-size: 100%; }
+  .wrap .item {
+    width: 50em;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .wrap .item .puchi_count {
+      font-size: 5em; }
+      .wrap .item .puchi_count span {
+        margin-right: 0.2em; }
+      .wrap .item .puchi_count img {
+        height: 0.7em; }
+    .wrap .item .Twitter_btn {
+      display: block;
+      width: 7em;
+      height: 7em;
+      background-image: url(../img/twitter.svg);
+      background-size: 100%; }
+
+/*# sourceMappingURL=style.css.map */

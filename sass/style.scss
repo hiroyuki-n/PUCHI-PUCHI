@@ -1,0 +1,101 @@
+// ================================
+// ブレイクポイントの設定
+// ================================
+$bp_XXL: 1600px;
+$bp_XL: 1024px;
+$bp_L: 768px;
+$bp_M: 640px;
+$bp_S: 420px;
+$bp_XS: 320px;
+
+@media only screen and (max-width: $bp_S) {
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "M PLUS Rounded 1c";
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
+}
+.wrap {
+  font-size: 0.5vw;
+  @media only screen and (max-width: $bp_L) {
+    font-size: 1.5vw;
+  }
+
+  h1 {
+    text-align: center;
+
+    img {
+      width: 24em;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50em;
+    margin: auto;
+    position: relative;
+    padding: 4em 0;
+    &:before {
+      content: "";
+      display: block;
+      width: 50em;
+      height: 50em;
+      position: absolute;
+      transform: scale(1.1);
+      background-image: url(../img/line.svg);
+      background-size: 100%;
+    }
+    li {
+      width: 10em;
+      height: 10em;
+      list-style: none;
+      position: relative;
+      &.none {
+        pointer-events: none;
+      }
+      span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-size: 100%;
+      }
+    }
+  }
+
+  .item {
+    width: 50em;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .puchi_count {
+      font-size: 5em;
+      span {
+        margin-right: 0.2em;
+      }
+      img {
+        height: 0.7em;
+      }
+    }
+
+    .Twitter_btn {
+      display: block;
+      width: 7em;
+      height: 7em;
+      background-image: url(../img/twitter.svg);
+      background-size: 100%;
+    }
+  }
+}
