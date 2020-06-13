@@ -39,49 +39,82 @@ body {
       width: 24em;
     }
   }
-
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    width: 50em;
-    margin: auto;
+  .inner {
     position: relative;
-    padding: 4em 0;
-    &:before {
-      content: "";
-      display: block;
+    ul.puchi_puchi_list {
+      display: flex;
+      flex-wrap: wrap;
       width: 50em;
       height: 50em;
-      position: absolute;
-      transform: scale(1.1);
-      background-image: url(../img/line.svg);
-      background-size: 100%;
-    }
-    li {
-      width: 10em;
-      height: 10em;
-      list-style: none;
+      margin: 0 auto 8em;
       position: relative;
-      &.none {
-        pointer-events: none;
+      padding: 4em 0;
+
+      &.action {
+        width: 100em;
+        display: none;
       }
-      span {
+
+      &:before {
+        content: "";
         display: block;
-        width: 100%;
-        height: 100%;
+        width: 50em;
+        height: 50em;
+        position: absolute;
+        transform: scale(1.1);
+        background-image: url(../img/line.svg);
         background-size: 100%;
+      }
+      li {
+        width: 10em;
+        height: 10em;
+        list-style: none;
+        position: relative;
+        &.none {
+          pointer-events: none;
+        }
+        span {
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-size: 100%;
+        }
+      }
+    }
+    .puchi_puchi_crash {
+      width: 50em;
+      height: 50em;
+      padding: 4em 0;
+
+      background-image: url(../img/puchi_anime.svg);
+      background-size: 100% auto;
+      background-position: 0 0;
+      transition: 0.3s;
+      display: none;
+      margin: 0 auto 8em;
+
+      position: relative;
+      &.action {
+        display: block;
+
+        animation: crash 1.5s steps(14);
+        @keyframes crash {
+          to {
+            background-position: 0 700em;
+          }
+        }
       }
     }
   }
-
   .item {
     width: 50em;
     margin: auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    .puchi_count {
+    justify-content: flex-end;
+    .puchi_score {
       font-size: 5em;
+      margin-right: auto;
       span {
         margin-right: 0.2em;
       }
@@ -89,13 +122,106 @@ body {
         height: 0.7em;
       }
     }
+    .crash_btn {
+      font-size: 5em;
+      padding-right: 0.5em;
+      &.action {
+        pointer-events: none;
+      }
 
-    .Twitter_btn {
+      img {
+        height: 0.7em;
+      }
+    }
+    ul.icon {
+      display: flex;
+      li {
+        img {
+          display: block;
+          width: 7em;
+        }
+      }
+    }
+  }
+}
+.shop_content {
+  display: none;
+
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  background: #fff;
+  &.open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: shop_content 0.5s;
+    @keyframes shop_content {
+      0% {
+        transform: scale(0.95);
+      }
+      90% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  }
+  .inner {
+    font-size: 0.5vw;
+    width: 50em;
+    height: 50em;
+    @media only screen and (max-width: $bp_L) {
+      font-size: 1.5vw;
+    }
+    .close {
+      text-align: right;
+      font-size: 2em;
+      padding: 1em;
+      font-weight: bold;
+      margin-bottom: 1em;
+      cursor: pointer;
+    }
+    .title {
+      text-align: center;
+      font-size: 4em;
+      letter-spacing: 0.1em;
+      margin-bottom: 1em;
+      span {
+        font-size: 1.2em;
+        font-weight: bold;
+        border-bottom: solid 3px #000;
+      }
+    }
+    .txt {
+      text-align: center;
+      font-size: 3.5em;
+      margin-bottom: 2em;
+      span {
+        font-size: 1.1em;
+        font-weight: bold;
+        border-bottom: solid 3px #000;
+      }
+    }
+
+    .buy_btn {
+      background: #000;
+      color: #fff;
       display: block;
-      width: 7em;
-      height: 7em;
-      background-image: url(../img/twitter.svg);
-      background-size: 100%;
+      font-size: 3.5em;
+      width: 10em;
+      padding: 0.2em;
+      margin: auto;
+      text-align: center;
+      border-radius: 10em;
+      cursor: pointer;
+    }
+    .buy_not,
+    .buy_thanks {
+      text-align: center;
+      font-size: 3.5em;
     }
   }
 }

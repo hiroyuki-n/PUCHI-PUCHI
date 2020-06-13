@@ -22,51 +22,147 @@ body {
     text-align: center; }
     .wrap h1 img {
       width: 24em; }
-  .wrap ul {
-    display: flex;
-    flex-wrap: wrap;
-    width: 50em;
-    margin: auto;
-    position: relative;
-    padding: 4em 0; }
-    .wrap ul:before {
-      content: "";
-      display: block;
+  .wrap .inner {
+    position: relative; }
+    .wrap .inner ul.puchi_puchi_list {
+      display: flex;
+      flex-wrap: wrap;
       width: 50em;
       height: 50em;
-      position: absolute;
-      transform: scale(1.1);
-      background-image: url(../img/line.svg);
-      background-size: 100%; }
-    .wrap ul li {
-      width: 10em;
-      height: 10em;
-      list-style: none;
-      position: relative; }
-      .wrap ul li.none {
-        pointer-events: none; }
-      .wrap ul li span {
+      margin: 0 auto 8em;
+      position: relative;
+      padding: 4em 0; }
+      .wrap .inner ul.puchi_puchi_list.action {
+        width: 100em;
+        display: none; }
+      .wrap .inner ul.puchi_puchi_list:before {
+        content: "";
         display: block;
-        width: 100%;
-        height: 100%;
+        width: 50em;
+        height: 50em;
+        position: absolute;
+        transform: scale(1.1);
+        background-image: url(../img/line.svg);
         background-size: 100%; }
+      .wrap .inner ul.puchi_puchi_list li {
+        width: 10em;
+        height: 10em;
+        list-style: none;
+        position: relative; }
+        .wrap .inner ul.puchi_puchi_list li.none {
+          pointer-events: none; }
+        .wrap .inner ul.puchi_puchi_list li span {
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-size: 100%; }
+    .wrap .inner .puchi_puchi_crash {
+      width: 50em;
+      height: 50em;
+      padding: 4em 0;
+      background-image: url(../img/puchi_anime.svg);
+      background-size: 100% auto;
+      background-position: 0 0;
+      transition: 0.3s;
+      display: none;
+      margin: 0 auto 8em;
+      position: relative; }
+      .wrap .inner .puchi_puchi_crash.action {
+        display: block;
+        animation: crash 1.5s steps(14); }
+@keyframes crash {
+  to {
+    background-position: 0 700em; } }
   .wrap .item {
     width: 50em;
     margin: auto;
     display: flex;
     align-items: center;
-    justify-content: space-between; }
-    .wrap .item .puchi_count {
-      font-size: 5em; }
-      .wrap .item .puchi_count span {
+    justify-content: flex-end; }
+    .wrap .item .puchi_score {
+      font-size: 5em;
+      margin-right: auto; }
+      .wrap .item .puchi_score span {
         margin-right: 0.2em; }
-      .wrap .item .puchi_count img {
+      .wrap .item .puchi_score img {
         height: 0.7em; }
-    .wrap .item .Twitter_btn {
+    .wrap .item .crash_btn {
+      font-size: 5em;
+      padding-right: 0.5em; }
+      .wrap .item .crash_btn.action {
+        pointer-events: none; }
+      .wrap .item .crash_btn img {
+        height: 0.7em; }
+    .wrap .item ul.icon {
+      display: flex; }
+      .wrap .item ul.icon li img {
+        display: block;
+        width: 7em; }
+
+.shop_content {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  background: #fff; }
+  .shop_content.open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: shop_content 0.5s; }
+@keyframes shop_content {
+  0% {
+    transform: scale(0.95); }
+  90% {
+    transform: scale(1.05); }
+  100% {
+    transform: scale(1); } }
+  .shop_content .inner {
+    font-size: 0.5vw;
+    width: 50em;
+    height: 50em; }
+    @media only screen and (max-width: 768px) {
+      .shop_content .inner {
+        font-size: 1.5vw; } }
+    .shop_content .inner .close {
+      text-align: right;
+      font-size: 2em;
+      padding: 1em;
+      font-weight: bold;
+      margin-bottom: 1em;
+      cursor: pointer; }
+    .shop_content .inner .title {
+      text-align: center;
+      font-size: 4em;
+      letter-spacing: 0.1em;
+      margin-bottom: 1em; }
+      .shop_content .inner .title span {
+        font-size: 1.2em;
+        font-weight: bold;
+        border-bottom: solid 3px #000; }
+    .shop_content .inner .txt {
+      text-align: center;
+      font-size: 3.5em;
+      margin-bottom: 2em; }
+      .shop_content .inner .txt span {
+        font-size: 1.1em;
+        font-weight: bold;
+        border-bottom: solid 3px #000; }
+    .shop_content .inner .buy_btn {
+      background: #000;
+      color: #fff;
       display: block;
-      width: 7em;
-      height: 7em;
-      background-image: url(../img/twitter.svg);
-      background-size: 100%; }
+      font-size: 3.5em;
+      width: 10em;
+      padding: 0.2em;
+      margin: auto;
+      text-align: center;
+      border-radius: 10em;
+      cursor: pointer; }
+    .shop_content .inner .buy_not,
+    .shop_content .inner .buy_thanks {
+      text-align: center;
+      font-size: 3.5em; }
 
 /*# sourceMappingURL=style.css.map */
